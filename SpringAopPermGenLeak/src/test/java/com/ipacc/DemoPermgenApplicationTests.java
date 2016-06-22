@@ -18,6 +18,12 @@ import com.ipacc.DemoPermgenLeakApplication;
 import com.ipacc.service.PrototypeGarbageCollectionService;
 
 /**
+ * This test recreates a perm gen leak caused by Spring 4.2.6+ and CGLIB 3.2.2 and 3.2.3.
+ * 
+ * The leak is manifested by using a prototype scope service which has an AOP interceptor
+ * on it's public method. I think the bug with CGLIB causes the reference to the proxy cache 
+ * to be lost on garbage collection, but the cache remains in memory. A new cache is created
+ * for each call which fills up perm gen.
  * 
  * @author PateL
  *
