@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.ipacc.DemoPermgenLeakApplication;
+import com.ipacc.SpringAopPermgenLeakApplication;
 import com.ipacc.service.PrototypeGarbageCollectionService;
 
 /**
@@ -29,8 +29,8 @@ import com.ipacc.service.PrototypeGarbageCollectionService;
  *
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = DemoPermgenLeakApplication.class)
-public class DemoPermgenApplicationTests {
+@SpringApplicationConfiguration(classes = SpringAopPermgenLeakApplication.class)
+public class SpringAopPermgenApplicationTests {
     
     @Autowired
     private ObjectFactory<PrototypeGarbageCollectionService> prototypeGarbageCollectionServiceFactory;
