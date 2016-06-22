@@ -41,8 +41,6 @@ public class DemoPermgenApplicationTests {
 	    long permGenUsageAfterWarmup = getPermGenUsage();
 	    iterate(200);
 	    long permGenUsageAfterIterate = getPermGenUsage();
-	    System.out.println("warmup:  " + permGenUsageAfterWarmup);
-	    System.out.println("iterate: " + permGenUsageAfterIterate);
 	    assertThat(permGenUsageAfterIterate).isCloseTo(permGenUsageAfterWarmup, withPercentage(20));
 	}
 
